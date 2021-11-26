@@ -1,7 +1,0 @@
-name: InstancedItemsAPI
-version: '${project.version}'
-main: me.swipez.instanceditemsapi.InstancedItemsAPI
-api-version: 1.17
-commands:
-  testcommand:
-    usage: /testcommand

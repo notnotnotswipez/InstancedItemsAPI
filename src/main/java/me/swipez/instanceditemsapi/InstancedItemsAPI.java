@@ -1,29 +1,17 @@
 package me.swipez.instanceditemsapi;
 
-import me.swipez.instanceditemsapi.test.TestItem;
-import me.swipez.instanceditemsapi.test.TestCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class InstancedItemsAPI extends JavaPlugin {
+public final class InstancedItemsAPI {
 
-    private static InstancedItemsAPI plugin;
+    private static JavaPlugin plugin;
     public static boolean debug = false;
 
-    @Override
-    public void onEnable() {
-        plugin = this;
-        if (debug){
-            InstancedItemsRegistry.register(TestItem.class, "testitem");
-            getCommand("testcommand").setExecutor(new TestCommand());
-        }
+    public static void setPlugin(JavaPlugin javaPlugin){
+        plugin = javaPlugin;
     }
 
-    @Override
-    public void onDisable() {
-
-    }
-
-    public static InstancedItemsAPI getPlugin() {
+    public static JavaPlugin getPlugin() {
         return plugin;
     }
 }
