@@ -1,4 +1,4 @@
-package me.swipez.instanceditemsapi.test;
+package me.swipez.instanceditemsapi.demo;
 
 import me.swipez.instanceditemsapi.InstancedItem;
 import me.swipez.instanceditemsapi.annotations.DeclaredModule;
