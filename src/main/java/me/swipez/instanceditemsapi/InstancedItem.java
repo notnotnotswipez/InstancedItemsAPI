@@ -51,6 +51,7 @@ public class InstancedItem {
             PersistentDataContainer persistentDataContainer = itemMeta.getPersistentDataContainer();
             persistentDataContainer.set(new NamespacedKey(InstancedItemsAPI.getPlugin(), "customItemUUID"), PersistentDataType.STRING, customItemID.toString());
             baseItem.setItemMeta(itemMeta);
+            hasBeenCalled = false;
         }
         return baseItem;
     }
