@@ -4,14 +4,14 @@ based items easier to make, with an annotation based module system, so you can a
 
 Maven
 
-```maven
+```java
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
 ```
 
-```maven
+```java
         <dependency>
             <groupId>com.github.notnotnotswipez</groupId>
             <artifactId>InstancedItemsAPI</artifactId>
