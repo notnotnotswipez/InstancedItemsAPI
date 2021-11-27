@@ -5,22 +5,21 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class RightClickItemModule extends ItemModule {
+public class LeftClickItemModule extends ItemModule {
 
-    public RightClickItemModule(){
+    public LeftClickItemModule(){
 
     }
 
     @EventHandler
-    public void onPlayerRightClicksWithItem(PlayerInteractEvent event) {
-        if (!event.getAction().toString().toLowerCase().contains("right")){
+    public void onPlayerLeftClicks(PlayerInteractEvent event){
+        if (!event.getAction().toString().toLowerCase().contains("left")){
             return;
         }
         if (isItem(event.getItem())){
             trigger(new Data(event.getPlayer(), event));
         }
     }
-
 
     public static class Data {
 

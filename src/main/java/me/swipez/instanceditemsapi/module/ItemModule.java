@@ -9,6 +9,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class ItemModule implements Listener {
@@ -49,5 +50,13 @@ public class ItemModule implements Listener {
             return false;
         }
         return persistentDataContainer.get(new NamespacedKey(InstancedItemsAPI.getPlugin(), "customItemUUID"), PersistentDataType.STRING).equals(getMainItem().customItemID.toString());
+    }
+
+    public void trigger(Object... parameters){
+        try {
+            getMethod().invoke(getMainItem().specificInstance, parameters);
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
     }
 }
