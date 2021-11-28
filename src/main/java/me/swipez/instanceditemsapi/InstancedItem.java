@@ -35,10 +35,6 @@ public class InstancedItem {
         this.baseItem = baseItem;
     }
 
-    public void setPreBaseItem(ItemStack item){
-        baseItem = item;
-    }
-
     public String getIdentifier() {
         return identifier;
     }
