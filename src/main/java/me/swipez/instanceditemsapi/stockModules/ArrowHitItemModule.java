@@ -24,9 +24,14 @@ public class ArrowHitItemModule extends ItemModule {
                 List<UUID> forgottenArrows = new ArrayList<>();
                 for (UUID uuid : shotArrows){
                     Projectile projectile = (Projectile) Bukkit.getEntity(uuid);
-                    if (projectile.isInWater() || projectile.isOnGround()){
-                        trigger(new Data((Player) projectile.getShooter(), null, null, false, projectile));
+                    if (projectile == null){
                         forgottenArrows.add(uuid);
+                    }
+                    else {
+                        if (projectile.isInWater() || projectile.isOnGround()){
+                            trigger(new Data((Player) projectile.getShooter(), null, null, false, projectile));
+                            forgottenArrows.add(uuid);
+                        }
                     }
                 }
                 for (UUID uuid : forgottenArrows){
