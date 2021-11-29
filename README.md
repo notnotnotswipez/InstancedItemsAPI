@@ -15,6 +15,6 @@ Maven
         <dependency>
             <groupId>com.github.notnotnotswipez</groupId>
             <artifactId>InstancedItemsAPI</artifactId>
-            <version>release-1.2</version>
+            <version>release-1.3</version>
         </dependency>
 ```
